@@ -1,0 +1,13 @@
+.boxShops {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.itemShops:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.itemShops {
+    padding: 10px;
+    border: 1px solid red;
+}

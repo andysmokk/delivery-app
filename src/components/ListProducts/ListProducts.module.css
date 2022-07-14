@@ -1,0 +1,18 @@
+.boxProducts {
+    border: 1px solid black;
+    padding: 15px 60px 15px 60px;
+
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.listProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    row-gap: 30px;
+}
+
+.itemProducts {
+    border: 1px solid red;
+}

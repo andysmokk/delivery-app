@@ -1,0 +1,16 @@
+.itemProductsImg {
+    object-fit: cover;
+    height: 250px
+}
+
+.descriptionBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.buttonProduct {
+    padding: 10px;
+}
