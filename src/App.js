@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 import { fetchShops } from "../src/api/api";
@@ -33,19 +33,21 @@ function App() {
   const addToCartProductHandler = (id) => {
     let currentCart = [];
     const currentProduct = products.find((product) => product.id === id);
-    const indexProductOfCart = cart.indexOf(
-      (product) => product.id === currentProduct.id
+    const indexProductOfCart = cart.findIndex(
+      (product) => product.product.id === currentProduct.id
     );
 
     currentCart = [...cart];
 
     if (indexProductOfCart === -1) {
-      currentCart = [...cart, currentProduct];
+      currentCart = [...cart, { product: currentProduct, quantity: 1 }];
+      setCart(currentCart);
+    } else {
+      currentCart[indexProductOfCart].quantity =
+        currentCart[indexProductOfCart].quantity + 1;
       setCart(currentCart);
     }
   };
-
-  console.log(cart);
 
   return (
     <section className="container">
@@ -63,7 +65,10 @@ function App() {
               />
             }
           />
-          <Route path="shopping-cart" element={<ShoppingCartPage />} />
+          <Route
+            path="shopping-cart"
+            element={<ShoppingCartPage cart={cart} setCart={setCart} />}
+          />
         </Route>
       </Routes>
     </section>

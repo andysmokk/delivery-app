@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import Shops from "../../components/Shops/Shops";
 import Products from "../../components/Products/Products";
 import s from "./ShopPage.module.css";
@@ -10,9 +9,6 @@ function ShopPage({
   shops,
   products,
 }) {
-  // const [idShop, setIdShop] = useState(null);
-  // const [idProduct, setIdProduct] = useState(null);
-
   return (
     <section className={s.section}>
       <Shops IdShopHandler={IdShopHandler} shops={shops} />

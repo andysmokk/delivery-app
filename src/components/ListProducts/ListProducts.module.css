@@ -1,6 +1,6 @@
 .boxProducts {
     border: 1px solid black;
-    padding: 15px 60px 15px 60px;
+    padding: 15px 30px 15px 30px;
 
     height: 500px;
     overflow-y: scroll;
@@ -9,7 +9,7 @@
 .listProducts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 120px;
+    column-gap: 30px;
     row-gap: 30px;
 }
 

@@ -1,0 +1,10 @@
+.boxBtnSubmit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnSubmit {
+    padding: 10px;
+    margin-left: 50px;
+}
