@@ -16,8 +16,9 @@ function ListProducts({ products, idShop, onClick }) {
               <Product
                 name={product.name}
                 img={product.img}
-                id={product.id}
-                products={currentProducts}
+                // id={product.id}
+                price={product.price}
+                // products={currentProducts}
                 onClick={() => onClick(product.id)}
               />
             </li>

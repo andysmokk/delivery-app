@@ -11,9 +11,8 @@ function NavLayout() {
         <NavLink to="/shopping-cart" className={s.link}>
           Shopping cart
         </NavLink>
-
-        <Outlet />
       </header>
+      <Outlet />
     </>
   );
 }

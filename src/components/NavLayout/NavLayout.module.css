@@ -1,8 +1,24 @@
 .header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
 }
 
 .link {
-    padding: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-left: 10px;
+    background-color: rgba(185, 171, 171, 0.548);
+    border: 2px solid black;
+    color: black;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.link:hover,
+.link:focus {
+    background-color: rgb(138, 136, 136);
+    color: white;
 }

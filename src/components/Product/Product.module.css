@@ -5,12 +5,20 @@
 
 .descriptionBox {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: rgba(0, 0, 0, 0.11);
 }
 
 .buttonProduct {
     padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(185, 171, 171, 0.548);
+}
+
+.buttonProduct:hover,
+.buttonProduct:focus {
+    background-color: rgb(138, 136, 136);
+    color: white;
 }

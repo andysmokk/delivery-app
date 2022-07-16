@@ -1,5 +1,8 @@
 .descriptionBox {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .inputQuantity {
@@ -8,4 +11,16 @@
 
 .CartBarProductBtn {
     padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(185, 171, 171, 0.548);
+}
+
+.CartBarProductBtn:hover,
+.CartBarProductBtn:focus {
+    background-color: rgb(138, 136, 136);
+    color: white;
+}
+
+.label {
+    font-size: 14px;
 }

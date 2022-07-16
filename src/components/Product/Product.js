@@ -1,11 +1,14 @@
 import s from "./Product.module.css";
 
-function Product({ name, img, id, products, onClick }) {
+function Product({ name, img, price, onClick }) {
   return (
     <>
       <img className={s.itemProductsImg} src={img} alt="cat" />
       <div className={s.descriptionBox}>
-        <h2>{name}</h2>
+        <div>
+          <h2>{name}</h2>
+          <p>Price: {price}$</p>
+        </div>
         <button
           className={s.buttonProduct}
           type="button"

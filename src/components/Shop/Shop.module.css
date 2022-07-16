@@ -1,4 +1,14 @@
 .buttonShop {
     padding: 15px;
     width: 100%;
+    font-size: 16px;
+    background-color: rgba(185, 171, 171, 0.548);
+    color: black;
+    border-radius: 5px;
+}
+
+.buttonShop:hover,
+.buttonShop:focus {
+    background-color: rgb(138, 136, 136);
+    color: white;
 }

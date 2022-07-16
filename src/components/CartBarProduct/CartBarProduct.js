@@ -23,20 +23,24 @@ function CartBarProduct({ cart, id, name, img, price, quantity, setCart }) {
     <>
       <img src={img} alt="cat" />
       <div className={s.descriptionBox}>
-        <h2>{name}</h2>
-        <p>Price: {price}$</p>
+        <h3>{name}</h3>
         <div>
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            className={s.inputQuantity}
-            type="number"
-            step="1"
-            min="1"
-            max="30"
-            value={quantity}
-            name="quantity"
-            onChange={(e) => changeQuantity(id, e.target.value)}
-          />
+          <p>Price: {price}$</p>
+          <div>
+            <label htmlFor="quantity" className={s.label}>
+              Quantity:
+            </label>
+            <input
+              className={s.inputQuantity}
+              type="number"
+              step="1"
+              min="1"
+              max="30"
+              value={quantity}
+              name="quantity"
+              onChange={(e) => changeQuantity(id, e.target.value)}
+            />
+          </div>
         </div>
         <button
           type="button"
