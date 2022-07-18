@@ -6,6 +6,7 @@ import { fetchShops } from "../src/api/api";
 import { fetchProducts } from "../src/api/api";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage";
+import NotFoundPage from "../src/pages/NotFoundPage/NotFoundPage";
 import NavLayout from "./components/NavLayout/NavLayout";
 import { sendOrder } from "../src/api/api";
 
@@ -106,6 +107,7 @@ function App() {
     <section className="container">
       <Routes>
         <Route path="/" element={<NavLayout />}>
+          <Route path="*" element={<NotFoundPage />} />
           <Route
             path="/"
             element={
