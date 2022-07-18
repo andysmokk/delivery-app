@@ -7,6 +7,7 @@ import { fetchProducts } from "../src/api/api";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage";
 import NavLayout from "./components/NavLayout/NavLayout";
+import { sendOrder } from "../src/api/api";
 
 function App() {
   const [idShop, setIdShop] = useState(null);
@@ -14,18 +15,34 @@ function App() {
   const [shops, setShops] = useState([]);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+  });
+
+  useEffect(() => {
+    setUser({ name: name, phone: phone, email: email, address: address });
+  }, [address, email, name, phone]);
 
   const IdShopHandler = (id) => setIdShop(id);
   // const IdProductHandler = (id) => setIdProduct(id);
 
   useEffect(() => {
     fetchShops()
+      .then((response) => response.data)
       .then((shops) => setShops(shops))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     fetchProducts()
+      .then((response) => response.data)
       .then((products) => setProducts(products))
       .catch((err) => console.log(err));
   }, []);
@@ -49,6 +66,42 @@ function App() {
     }
   };
 
+  const submitHandler = (e, data) => {
+    e.preventDefault();
+
+    sendOrder({ user: user, order: data });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setAddress("");
+    setCart([]);
+  };
+
+  const onFormChange = ({ target }) => {
+    const { name, value } = target;
+
+    switch (name) {
+      case "name":
+        setName(value);
+        break;
+
+      case "email":
+        setEmail(value);
+        break;
+
+      case "phone":
+        setPhone(value);
+        break;
+
+      case "address":
+        setAddress(value);
+        break;
+
+      default:
+        return;
+    }
+  };
+
   return (
     <section className="container">
       <Routes>
@@ -67,7 +120,18 @@ function App() {
           />
           <Route
             path="shopping-cart"
-            element={<ShoppingCartPage cart={cart} setCart={setCart} />}
+            element={
+              <ShoppingCartPage
+                cart={cart}
+                setCart={setCart}
+                onSubmit={submitHandler}
+                onFormChange={onFormChange}
+                name={name}
+                email={email}
+                phone={phone}
+                address={address}
+              />
+            }
           />
         </Route>
       </Routes>

@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import s from "./CartBarProduct.module.css";
 
 function CartBarProduct({ cart, id, name, img, price, quantity, setCart }) {
@@ -8,7 +7,7 @@ function CartBarProduct({ cart, id, name, img, price, quantity, setCart }) {
       (product) => product.product.id === id
     );
 
-    currentCart[indexProductOfCart].quantity = number;
+    currentCart[indexProductOfCart].quantity = Number(number);
 
     setCart(currentCart);
   };

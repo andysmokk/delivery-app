@@ -1,6 +1,6 @@
 import s from "./UserBar.module.css";
 
-function UserBar() {
+function UserBar({ onChange, name, email, phone, address }) {
   return (
     <div className={s.userBox}>
       <div className={s.inputBox}>
@@ -8,8 +8,10 @@ function UserBar() {
           <span>Name:</span>
           <input
             type="text"
-            // value={}
-            // onChange={onChange}
+            name="name"
+            value={name}
+            onChange={onChange}
+            required
           ></input>
         </label>
       </div>
@@ -17,9 +19,11 @@ function UserBar() {
         <label className={s.label}>
           <span>Email:</span>
           <input
-            type="text"
-            // value={}
-            // onChange={onChange}
+            type="email"
+            name="email"
+            value={email}
+            onChange={onChange}
+            required
           ></input>
         </label>
       </div>
@@ -27,9 +31,11 @@ function UserBar() {
         <label className={s.label}>
           <span>Phone:</span>
           <input
-            type="text"
-            // value={}
-            // onChange={onChange}
+            type="tel"
+            name="phone"
+            value={phone}
+            onChange={onChange}
+            required
           ></input>
         </label>
       </div>
@@ -38,8 +44,10 @@ function UserBar() {
           <span>Address:</span>
           <input
             type="text"
-            // value={}
-            // onChange={onChange}
+            name="address"
+            value={address}
+            onChange={onChange}
+            required
           ></input>
         </label>
       </div>
