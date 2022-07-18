@@ -1,6 +1,7 @@
 const axios = require("axios").default;
 const BASE_URL_FETCH = "https://62cd6e7d066bd2b69925bcaf.mockapi.io/api/v1/";
-const BASE_URL_POST = "http://localhost:3001/orders/shopping-cart";
+const BASE_URL_POST =
+  "http://back-delivery-app.herokuapp.com/orders/shopping-cart";
 
 async function fetchShops() {
   try {
