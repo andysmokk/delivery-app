@@ -2,7 +2,7 @@
 
 ### FrontEnd:
 
-https://back-delivery-app.herokuapp.com/
+https://delivery-app-products.netlify.app/
 
 ### BackEnd:
 
